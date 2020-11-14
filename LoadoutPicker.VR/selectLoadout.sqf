@@ -1,12 +1,22 @@
+#include "data.sqf"
+
 _loadoutIndex = lbCurSel 1500;
 _factionIndex = lbCurSel 1501;
 
+
+//Add error handling
+_faction = elp_factions select _factionIndex;
+_loadout = _faction select _loadoutIndex;
+player setUnitLoadout _loadout;
+
+
+/*
 switch (_factionIndex) do
 {
 	case 0: {
 		switch (_loadoutIndex) do 
 		{
-			case 0: {player setUnitLoadout [["rhs_weap_m4a1_blockII_KAC_bk","rhsusf_acc_nt4_black","CUP_acc_ANPEQ_15_Top_Flashlight_Black_L","rhsusf_acc_su230",[],[],""],[],["rhsusf_weap_glock17g4","","CUP_acc_CZ_M3X","",[],[],""],["CUP_U_CRYE_G3C_M81_US_V2",[["ACE_packingBandage",10],["ACE_epinephrine",4],["ACE_morphine",4],["ACE_tourniquet",2],["ACE_splint",2],["ACE_CableTie",2],["ACE_IR_Strobe_Item",1],["ACE_MapTools",1],["rhsusf_mag_17Rnd_9x19_FMJ",2,17]]],["tfa_v_mmac_assaulter_belt_coy",[["rhs_mag_30Rnd_556x45_Mk318_PMAG",6,30],["rhs_mag_30Rnd_556x45_Mk318_PMAG_Tan",4,30],["HandGrenade",3,1],["SmokeShell",3,1],["SmokeShellPurple",1,1]]],["tfa_bp_hydration_coy",[["ACE_SpraypaintGreen",1],["ACE_EntrenchingTool",1]]],"CUP_H_OpsCore_Spray_US_SF","rhs_googles_clear",["Binocular","","","",[],[],""],["ItemMap","ItemAndroid","","ItemCompass","ACE_Altimeter","rhsusf_ANPVS_15"]]};
+			case 0: {player setUnitLoadout elp_raiders_rifleman_m4};
 			case 1: {player setUnitLoadout [["rhs_weap_mk18_KAC_bk","rhsusf_acc_nt4_black","CUP_acc_ANPEQ_15_Top_Flashlight_Black_L","rhsusf_acc_su230",[],[],""],[],["rhsusf_weap_glock17g4","","CUP_acc_CZ_M3X","",[],[],""],["CUP_U_CRYE_G3C_M81_US_V2",[["ACE_packingBandage",10],["ACE_epinephrine",4],["ACE_morphine",4],["ACE_tourniquet",2],["ACE_splint",2],["ACE_CableTie",2],["ACE_IR_Strobe_Item",1],["ACE_MapTools",1],["rhsusf_mag_17Rnd_9x19_FMJ",2,17]]],["tfa_v_mmac_assaulter_belt_coy",[["rhs_mag_30Rnd_556x45_Mk318_PMAG",6,30],["rhs_mag_30Rnd_556x45_Mk318_PMAG_Tan",4,30],["HandGrenade",3,1],["SmokeShell",3,1],["SmokeShellPurple",1,1]]],["tfa_bp_hydration_coy",[["ACE_SpraypaintGreen",1],["ACE_EntrenchingTool",1]]],"CUP_H_OpsCore_Spray_US_SF","rhs_googles_clear",["Binocular","","","",[],[],""],["ItemMap","ItemAndroid","","ItemCompass","ACE_Altimeter","rhsusf_ANPVS_15"]]};
 			case 2: {player setUnitLoadout [["CUP_arifle_Mk17_CQC_Black","rhsusf_acc_aac_762sdn6_silencer","CUP_acc_ANPEQ_15_Flashlight_Black_L","rhsusf_acc_su230",[],[],""],[],["rhsusf_weap_glock17g4","","CUP_acc_CZ_M3X","",[],[],""],["CUP_U_CRYE_G3C_M81_US_V2",[["ACE_packingBandage",10],["ACE_epinephrine",4],["ACE_morphine",4],["ACE_tourniquet",2],["ACE_splint",2],["ACE_CableTie",2],["ACE_IR_Strobe_Item",1],["ACE_MapTools",1],["rhsusf_mag_17Rnd_9x19_FMJ",2,17]]],["tfa_v_mmac_marksman_belt_coy",[["rhs_mag_20Rnd_SCAR_762x51_mk316_special_bk",8,20],["rhs_mag_20Rnd_SCAR_762x51_m62_tracer",4,20]]],["tfa_bp_hydration_coy",[["HandGrenade",3,1],["SmokeShell",3,1]]],"CUP_H_OpsCore_Spray_US_SF","rhs_googles_clear",["Binocular","","","",[],[],""],["ItemMap","ItemAndroid","","ItemCompass","ACE_Altimeter","rhsusf_ANPVS_15"]]};
 			case 3: {player setUnitLoadout [["rhs_weap_m4a1_blockII_M203_bk","rhsusf_acc_nt4_black","CUP_acc_ANPEQ_15_Top_Flashlight_Black_L","rhsusf_acc_su230",[],[],""],[],["rhsusf_weap_glock17g4","","CUP_acc_CZ_M3X","",[],[],""],["CUP_U_CRYE_G3C_M81_US_V2",[["ACE_packingBandage",10],["ACE_epinephrine",4],["ACE_morphine",4],["ACE_tourniquet",2],["ACE_splint",2],["ACE_CableTie",2],["ACE_IR_Strobe_Item",1],["ACE_MapTools",1],["rhsusf_mag_17Rnd_9x19_FMJ",2,17]]],["tfa_v_mmac_grenadier_belt_coy",[["rhs_mag_30Rnd_556x45_Mk318_PMAG",6,30],["rhs_mag_30Rnd_556x45_Mk318_PMAG_Tan",4,30],["HandGrenade",3,1],["SmokeShell",3,1],["SmokeShellPurple",1,1],["rhs_mag_M433_HEDP",10,1],["1Rnd_SmokeRed_Grenade_shell",2,1]]],["tfa_bp_hydration_coy",[["ACE_SpraypaintGreen",1],["ACE_EntrenchingTool",1]]],"CUP_H_OpsCore_Spray_US_SF","rhs_googles_clear",["Binocular","","","",[],[],""],["ItemMap","ItemAndroid","","ItemCompass","ACE_Altimeter","rhsusf_ANPVS_15"]]};
@@ -32,6 +42,6 @@ switch (_factionIndex) do
 	};
 	default {hint "Faction not Implemented"};
 };
-
+*/
 
 
