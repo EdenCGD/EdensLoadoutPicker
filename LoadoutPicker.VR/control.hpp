@@ -39,12 +39,13 @@ class dialogLoadout
 			y = 0.412 * safezoneH + safezoneY;
 			w = 0.12375 * safezoneW;
 			h = 0.264 * safezoneH;
+			onLBSelChanged = "execVM 'selectFaction.sqf'"; //This should be the event to change the loadouts
 		};
-				class lblTile: RscText
+		class lblTile: RscText
 		{
 			idc = 1002;
 
-			text = "Eden's Loadout Picker"; //--- ToDo: Localize;
+			text = "Eden's Loadout Picker v2.0"; //--- ToDo: Localize;
 			x = 0.365937 * safezoneW + safezoneX;
 			y = 0.335 * safezoneH + safezoneY;
 			w = 0.257813 * safezoneW;
