@@ -16,7 +16,7 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={2487.2148,19.515547,7374.2402};
+		pos[]={2487.8574,16.022335,7367.1104};
 		dir[]={0.055621378,-0.63945842,-0.76698363};
 		up[]={0.046254978,0.76879364,-0.6379078};
 		aside[]={-0.9973231,5.1964889e-007,-0.072323009};
@@ -12392,7 +12392,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="call{this addAction [""Open Dialog"", {execVM ""openDialog.sqf""}];}";
+						init="call{this addAction [""Open Dialog"", {execVM ""LoadoutPicker\openDialog.sqf""}];}";
 						disableSimulation=1;
 						ignoreByDynSimulGrid=1;
 						class Inventory

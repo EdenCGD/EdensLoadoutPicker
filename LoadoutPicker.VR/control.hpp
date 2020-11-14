@@ -22,7 +22,7 @@ class dialogLoadout
 			h = 0.044 * safezoneH;
 			colorBackground[] = {0,0,0,0.7};
 			
-			action = "execVM 'selectLoadout.sqf'";
+			action = "execVM 'LoadoutPicker\selectLoadout.sqf'";
 		};
 		class lbLoadouts: RscListbox
 		{
@@ -39,7 +39,7 @@ class dialogLoadout
 			y = 0.412 * safezoneH + safezoneY;
 			w = 0.12375 * safezoneW;
 			h = 0.264 * safezoneH;
-			onLBSelChanged = "execVM 'selectFaction.sqf'"; //This should be the event to change the loadouts
+			onLBSelChanged = "execVM 'LoadoutPicker\selectFaction.sqf'"; //This should be the event to change the loadouts
 		};
 		class lblTile: RscText
 		{
