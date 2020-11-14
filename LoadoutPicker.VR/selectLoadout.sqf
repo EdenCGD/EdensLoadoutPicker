@@ -5,8 +5,8 @@ _factionIndex = lbCurSel 1501;
 
 
 //Add error handling
-_faction = elp_factions select _factionIndex;
-_loadout = _faction select _loadoutIndex;
+_faction = ((elp_factions select _factionIndex) select 1);
+_loadout = ((_faction select _loadoutIndex)select 1);
 player setUnitLoadout _loadout;
 
 

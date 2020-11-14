@@ -7,16 +7,13 @@ fn_addLoadoutsToList = {
 	private _loadouts = _this;
 
 	{
-		_lbLoadouts lbAdd _x
+		_lbLoadouts lbAdd (_x select 0);
 	} forEach _loadouts;
-
 };
 
 lbClear _lbLoadouts;
 
-switch (_factionIndex) do
-{
-	case 0: {marsocLoadouts call fn_addLoadoutsToList;};
-	case 1: {pmcLoadouts call fn_addLoadoutsToList;};
-	default {hint "Faction not Implemented"};
-};
+_faction = (elp_factions select _factionIndex);
+_loadout = (_faction select 1);
+_loadout call fn_addLoadoutsToList;
+
